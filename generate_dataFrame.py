@@ -20,8 +20,8 @@ resolved_bands = ['i','J','K']
 args = (age, feh, distance, AV)
 args3 = (age3, feh, distance3, AV)
 unresolved = {b:addmags(dar.mag[b](M1, *args), dar.mag[b](M2, *args), dar.mag[b](M3, *args3)) for b in unresolved_bands}
-resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
-resolved_2 = {b:dar.mag[b](M2, *args1) for b in resolved_bands}
+resolved_1 = {b:dar.mag[b](M1, *args) for b in resolved_bands}
+resolved_2 = {b:dar.mag[b](M2, *args) for b in resolved_bands}
 resolved_3 = {b:dar.mag[b](M3, *args3) for b in resolved_bands}
 
 print unresolved, resolved_1, resolved_2, resolved_3
