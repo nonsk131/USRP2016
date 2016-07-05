@@ -5,14 +5,13 @@ from isochrones.starmodel import StarModel
 from datetime import datetime
 
 
-df = pd.read_cvs('df.csv')
+df = pd.read_csv('df.csv')
 
 dar = Dartmouth_Isochrone()
 
 t = ObservationTree.from_df(df, name='test-triplet')
 t.define_models(dar)
 t.add_limit(logg=(3.0,None))
-t.print_ascii()
 
 mod = StarModel(dar, obs=t)
 startTime = datetime.now()
