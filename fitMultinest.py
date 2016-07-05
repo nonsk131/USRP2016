@@ -10,12 +10,12 @@ df = pd.read_csv('df.csv')
 dar = Dartmouth_Isochrone()
 
 t = ObservationTree.from_df(df, name='test-triplet')
-t.define_models(dar)
+t.define_models(dar, index=[0,0,1])
 t.add_limit(logg=(3.0,None))
 
 mod = StarModel(dar, obs=t)
 startTime = datetime.now()
-mod.fit_multinest(n_live_points=1000, refit=True)
+mod.fit_multinest(n_live_points=1000)
 time = datetime.now() - startTime
 evi = mod.evidence
 
