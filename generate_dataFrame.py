@@ -1,8 +1,10 @@
 from isochrones.utils import addmags
+from isochrones.dartmouth import Dartmouth_Isochrone
 import pandas as pd
 import numpy as np
 import os
 
+dar = Dartmouth_Isochrone()
 M1 = 1.5
 M2 = 0.5
 M3 = 1.0
