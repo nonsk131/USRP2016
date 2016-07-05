@@ -5,7 +5,7 @@ from isochrones.starmodel import StarModel
 from datetime import datetime
 
 
-df = pd.read_cvs('df.cvs')
+df = pd.read_cvs('df.csv')
 
 dar = Dartmouth_Isochrone()
 

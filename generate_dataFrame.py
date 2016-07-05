@@ -74,4 +74,4 @@ for inst in ['RAO']:  #Resolved observations
             i += 1
 
 print df
-df.to_cvs(path_or_buf='df.cvs')
+df.to_csv(path_or_buf='df.csv')
