@@ -10,7 +10,7 @@ df = pd.read_csv('df_binary.csv')
 dar = Dartmouth_Isochrone()
 
 t = ObservationTree.from_df(df, name='test-binary')
-t.define_models(dar)
+t.define_models(dar, index=[0,1])
 t.add_limit(logg=(3.0,None))
 
 mod = StarModel(dar, obs=t)
