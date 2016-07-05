@@ -1,5 +1,7 @@
 from isochrones.dartmouth import Dartmouth_Isochrone
 from isochrones.utils import addmags
+from isochrones.observation import ObservationTree
+from isochrones.starmodel import StarModel
 import numpy as np
 import pandas as pd
 
@@ -72,5 +74,10 @@ for inst in ['RAO']:  #Resolved observations
             df = df.append(pd.DataFrame(row, index=[i]))
             i += 1
 
-print df
-df.to_csv(path_or_buf='df_binary.csv')
+t = ObservationTree.from_df(df, name='test-binary')
+t.define_models(dar, index=[0,1])
+t.add_limit(logg=(3.0,None))
+t.print_ascii()
+
+mod = StarModel(dar, obs=t)
+mod.save_hdf('mod.h5', overwrite=True)
