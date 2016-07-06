@@ -53,7 +53,7 @@ for n in range(0,1,1):
     resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
     resolved_2 = {b:dar.mag[b](M2, *args2) for b in resolved_bands}
 
-    print dar.mag['K'](M2, *args2)
+    print dar.mag['K'](M2, *args1)
     print unresolved, resolved_1, resolved_2
 
     instruments = ['twomass','RAO']
