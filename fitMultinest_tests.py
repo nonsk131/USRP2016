@@ -45,7 +45,8 @@ for n in range(0,2,1):
     evi = str(evi)
     f2.write('case{}: '.format(i) + evi + '\n')
 
-    mod.corner(['mass_0_0','mass_0_1','distance_0','distance_1','AV_0','AV_1'])
+    #mod.corner(['mass_0_0','mass_0_1','distance_0','distance_1','AV_0','AV_1'])
+    mod.corner_physical(props=['mass', 'distance', 'AV'])
     mod.corner_observed()
 
 f1.close()
