@@ -26,7 +26,8 @@ for n in range(0,2,1):
     evi = str(evi)
     f1.write('case{}: '.format(i) + evi + '\n')
 
-    mod.corner(['mass_0_0','mass_0_1','distance_0','AV_0'])
+    #mod.corner(['mass_0_0','mass_0_1','distance_0','AV_0'])
+    mod.corner_physical()
     mod.corner_observed()
 
     #unassociated case
