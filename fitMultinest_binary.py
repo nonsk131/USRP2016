@@ -13,7 +13,7 @@ t.add_limit(logg=(3.0,None))
 
 mod = StarModel(dar, obs=t)
 startTime = datetime.now()
-mod.fit_multinest(n_live_points=1000)
+mod.fit_multinest(n_live_points=1000, refit=True)
 time = datetime.now() - startTime
 evi = mod.evidence
 
