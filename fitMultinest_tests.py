@@ -30,8 +30,10 @@ for n in range(0,2,1):
     f1.write('case{}: '.format(i) + evi + '\n')
 
     #mod.corner(['mass_0_0','mass_0_1','distance_0','AV_0'])
-    mod.corner_physical(props=['mass', 'distance', 'AV'])
-    mod.corner_observed()
+    fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
+    fig.savefig('test{}_corner_physical.png'.format(i))
+    fig = mod.corner_observed()
+    fig.savefig('test{}_corner_observed.png'.format(i))
 
     #unassociated case
     dar = Dartmouth_Isochrone()
