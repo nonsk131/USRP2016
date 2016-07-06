@@ -2,6 +2,7 @@ from isochrones.dartmouth import Dartmouth_Isochrone
 from isochrones.starmodel import StarModel
 from isochrones.observation import ObservationTree
 import pandas as pd
+import matpotlib.pyplot as plt
 
 f1 = open('evidence_bound.txt','w')
 f2 = open('evidence_unassociated.txt','w')
@@ -27,7 +28,7 @@ for n in range(0,2,1):
     f1.write('case{}: '.format(i) + evi + '\n')
 
     #mod.corner(['mass_0_0','mass_0_1','distance_0','AV_0'])
-    mod.corner_physical()
+    #mod.corner_physical()
     mod.corner_observed()
 
     #unassociated case
