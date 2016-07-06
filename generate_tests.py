@@ -5,7 +5,7 @@ import pandas as pd
 
 file = open('true_params.txt','w')
 
-for n in range(0,10,1):
+for n in range(0,1,1):
     if n < 10:
         index = '0' + str(n)
     else:
@@ -53,7 +53,7 @@ for n in range(0,10,1):
     resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
     resolved_2 = {b:dar.mag[b](M2, *args2) for b in resolved_bands}
 
-    print args1, args2
+    print dar.mag['K'](M1, *args1)
     print unresolved, resolved_1, resolved_2
 
     instruments = ['twomass','RAO']
