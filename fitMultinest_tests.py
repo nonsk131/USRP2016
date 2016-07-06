@@ -1,9 +1,9 @@
+import matplotlib
+matplotlib.use('Agg')
 from isochrones.dartmouth import Dartmouth_Isochrone
 from isochrones.starmodel import StarModel
 from isochrones.observation import ObservationTree
 import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 f1 = open('evidence_bound.txt','w')
