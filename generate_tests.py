@@ -24,7 +24,7 @@ for n in range(0,1,1):
         M2 = array[0]
 
     age1 = np.log10(5e9)
-    age2 = np.log10(5e10)
+    age2 = np.log10(5e9)
     feh1 = 0.0
 
     array = 900*np.random.rand(2) + 100
@@ -53,7 +53,7 @@ for n in range(0,1,1):
     resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
     resolved_2 = {b:dar.mag[b](M2, *args2) for b in resolved_bands}
 
-    print dar.mag['K'](M2, *args1)
+    print dar.mag['K'](M2, *args2)
     print unresolved, resolved_1, resolved_2
 
     instruments = ['twomass','RAO']
