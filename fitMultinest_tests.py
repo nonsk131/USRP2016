@@ -2,7 +2,7 @@ from isochrones.dartmouth import Dartmouth_Isochrone
 from isochrones.starmodel import StarModel
 from isochrones.observation import ObservationTree
 import pandas as pd
-import matpotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 f1 = open('evidence_bound.txt','w')
 f2 = open('evidence_unassociated.txt','w')
