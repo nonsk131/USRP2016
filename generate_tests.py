@@ -50,8 +50,8 @@ for n in range(0,100,1):
     args1 = (age1, feh1, distance1, AV1)
     args2 = (age2, feh2, distance2, AV2)
     unresolved = {b:addmags(dar.mag[b](M1, *args1), dar.mag[b](M2, *args2)) for b in unresolved_bands}
-    resolved_1 = {b:dar.mag['i'](M1, *args1) for b in resolved_bands}
-    resolved_2 = {b:dar.mag['i'](M2, *args2) for b in resolved_bands}
+    resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
+    resolved_2 = {b:dar.mag[b](M2, *args2) for b in resolved_bands}
 
     #print unresolved, resolved_1, resolved_2
 
