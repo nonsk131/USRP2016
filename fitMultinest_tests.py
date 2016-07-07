@@ -6,10 +6,7 @@ from isochrones.observation import ObservationTree
 import pandas as pd
 import matplotlib.pyplot as plt
 
-f1 = open('evidence_bound.txt','w')
-f2 = open('evidence_unassociated.txt','w')
-
-for n in range(42,100,1):
+for n in range(48,100,1):
     if n < 10:
         i = '0' + str(n)
     else:
@@ -25,9 +22,12 @@ for n in range(42,100,1):
     mod = StarModel(dar, obs=t)
     mod.fit_multinest(n_live_points=1000,
                         basename='test{}_bound'.format(i))
+
+    f1 = open('evidence_bound.txt','w')
     evi = mod.evidence
     evi = str(evi)
     f1.write('case{}: '.format(i) + evi + '\n')
+    f1.close()
 
     #mod.corner(['mass_0_0','mass_0_1','distance_0','AV_0'])
     fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
@@ -45,9 +45,12 @@ for n in range(42,100,1):
     mod = StarModel(dar, obs=t)
     mod.fit_multinest(n_live_points=1000,
                         basename='test{}_unassociated'.format(i))
+
+    f2 = open('evidence_unassociated.txt','w')
     evi = mod.evidence
     evi = str(evi)
     f2.write('case{}: '.format(i) + evi + '\n')
+    f2.close()
 
     #mod.corner(['mass_0_0','mass_0_1','distance_0','distance_1','AV_0','AV_1'])
     fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
@@ -56,6 +59,3 @@ for n in range(42,100,1):
     fig = mod.corner_observed()
     fig.savefig('test{}_unasso_corner_observed.png'.format(i))
     plt.close(fig)
-
-f1.close()
-f2.close()
