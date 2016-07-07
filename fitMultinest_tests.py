@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 f1 = open('evidence_bound.txt','w')
 f2 = open('evidence_unassociated.txt','w')
 
-for n in range(0,100,1):
+for n in range(42,100,1):
     if n < 10:
         i = '0' + str(n)
     else:
