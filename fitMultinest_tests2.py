@@ -28,7 +28,7 @@ for n in range(100,200,1):
                         basename='test{}_bound'.format(i))
 
     if rank == 0:
-        f1 = open('evidence_bound2.txt','w')
+        f1 = open('evidence_bound2.txt','a')
         evi = mod.evidence
         evi = str(evi)
         f1.write('case{}: '.format(i) + evi + '\n')
@@ -51,7 +51,7 @@ for n in range(100,200,1):
                         basename='test{}_unassociated'.format(i))
 
     if rank == 0:
-        f2 = open('evidence_unassociated2.txt','w')
+        f2 = open('evidence_unassociated2.txt','a')
         evi = mod.evidence
         evi = str(evi)
         f2.write('case{}: '.format(i) + evi + '\n')
