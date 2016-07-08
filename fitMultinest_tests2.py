@@ -10,7 +10,7 @@ from mpi4py import MPI
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 
-for n in range(100,200,1):
+for n in range(127,200,1):
     if n < 10:
         i = '0' + str(n)
     else:
