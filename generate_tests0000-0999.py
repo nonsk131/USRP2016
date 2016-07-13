@@ -7,13 +7,13 @@ file = open('/tigress/np5/true_params.txt','a')
 
 def get_index(n):
     if n < 10:
-        index = '000' + str(n)
+        return '000' + str(n)
     elif n < 100:
-        index = '00' + str(n)
+        return '00' + str(n)
     elif n < 1000:
-        index = '0' + str(n)
+        return '0' + str(n)
     else:
-        index = str(n)
+        return str(n)
 
 for n in range(0,1000,1):
     index = get_index(n)
