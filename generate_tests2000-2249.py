@@ -121,6 +121,6 @@ for n in range(2000,2250,1):
                 i += 1
 
     #print df
-    df.to_csv(path_or_buf='/tigress/np5/df_binary_test{}.csv'.format(index))
+    df.to_csv(path_or_buf='/tigress/np5/dataFrame/df_triplet_test{}.csv'.format(index))
 
 file.close()
