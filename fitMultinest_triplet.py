@@ -24,10 +24,10 @@ def get_index(n):
 n = sys.argv[1]
 i = get_index(n)
 
+df = pd.read_csv('/tigress/np5/df_triplet_test{}.csv'.format(i))
+
 #-------------------------------------------------------------------------------
 #triplet0 - all in same system
-df = pd.read_csv('/tigress/np5/df_binary_test{}.csv'.format(i)) #!!!!!!!!!!!!!!!!!!!!!!!!!!!change this part
-
 dar = Dartmouth_Isochrone()
 t = ObservationTree.from_df(df, name='test{}'.format(i))
 t.define_models(dar)
@@ -51,25 +51,97 @@ fig.savefig('/tigress/np5/figures/test{}_triplet0_corner_observed.png'.format(i)
 plt.close(fig)
 #-------------------------------------------------------------------------------
 
-#unassociated case
+#triplet1 - M1,M2 bound - M3 unbound
 dar = Dartmouth_Isochrone()
 t = ObservationTree.from_df(df, name='test{}'.format(i))
-t.define_models(dar, index = [0,1])
+t.define_models(dar, index=[0,0,1])
 
 mod = StarModel(dar, obs=t)
 mod.fit_multinest(n_live_points=1000,
-                    basename='/tigress/np5/chains/test{}_unassociated'.format(i))
+                    basename='/tigress/np5/chains/test{}_triplet1'.format(i))
 
 #if rank == 0:
-f2 = open('/tigress/np5/evidence_unassociated.txt','a')
+f1 = open('/tigress/np5/evidence_triplet1.txt','a')
 evi = mod.evidence
 evi = str(evi)
-f2.write('case{}: '.format(i) + evi + '\n')
-f2.close()
+f1.write('case{}: '.format(i) + evi + '\n')
+f1.close()
 
 fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
-fig.savefig('/tigress/np5/figures/test{}_unasso_corner_physical.png'.format(i))
+fig.savefig('/tigress/np5/figures/test{}_triplet1_corner_physical.png'.format(i))
 plt.close(fig)
 fig = mod.corner_observed()
-fig.savefig('/tigress/np5/figures/test{}_unasso_corner_observed.png'.format(i))
+fig.savefig('/tigress/np5/figures/test{}_triplet1_corner_observed.png'.format(i))
+plt.close(fig)
+#-------------------------------------------------------------------------------
+
+#triplet2 - M1,M3 bound - M2 unbound
+dar = Dartmouth_Isochrone()
+t = ObservationTree.from_df(df, name='test{}'.format(i))
+t.define_models(dar, index=[0,1,0])
+
+mod = StarModel(dar, obs=t)
+mod.fit_multinest(n_live_points=1000,
+                    basename='/tigress/np5/chains/test{}_triplet2'.format(i))
+
+#if rank == 0:
+f1 = open('/tigress/np5/evidence_triplet2.txt','a')
+evi = mod.evidence
+evi = str(evi)
+f1.write('case{}: '.format(i) + evi + '\n')
+f1.close()
+
+fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
+fig.savefig('/tigress/np5/figures/test{}_triplet2_corner_physical.png'.format(i))
+plt.close(fig)
+fig = mod.corner_observed()
+fig.savefig('/tigress/np5/figures/test{}_triplet2_corner_observed.png'.format(i))
+plt.close(fig)
+#-------------------------------------------------------------------------------
+
+#triplet3 - M2,M3 bound - M1 unbound
+dar = Dartmouth_Isochrone()
+t = ObservationTree.from_df(df, name='test{}'.format(i))
+t.define_models(dar, index=[0,1,1])
+
+mod = StarModel(dar, obs=t)
+mod.fit_multinest(n_live_points=1000,
+                    basename='/tigress/np5/chains/test{}_triplet3'.format(i))
+
+#if rank == 0:
+f1 = open('/tigress/np5/evidence_triplet3.txt','a')
+evi = mod.evidence
+evi = str(evi)
+f1.write('case{}: '.format(i) + evi + '\n')
+f1.close()
+
+fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
+fig.savefig('/tigress/np5/figures/test{}_triplet3_corner_physical.png'.format(i))
+plt.close(fig)
+fig = mod.corner_observed()
+fig.savefig('/tigress/np5/figures/test{}_triplet3_corner_observed.png'.format(i))
+plt.close(fig)
+#-------------------------------------------------------------------------------
+
+#triplet4 - M1,M2,M3 all unbound
+dar = Dartmouth_Isochrone()
+t = ObservationTree.from_df(df, name='test{}'.format(i))
+t.define_models(dar, index=[0,1,2])
+
+mod = StarModel(dar, obs=t)
+mod.fit_multinest(n_live_points=1000,
+                    basename='/tigress/np5/chains/test{}_triplet4'.format(i))
+
+#if rank == 0:
+f1 = open('/tigress/np5/evidence_triplet4.txt','a')
+evi = mod.evidence
+evi = str(evi)
+f1.write('case{}: '.format(i) + evi + '\n')
+f1.close()
+
+fig = mod.corner_physical(props=['mass', 'distance', 'AV'])
+fig.savefig('/tigress/np5/figures/test{}_triplet4_corner_physical.png'.format(i))
+plt.close(fig)
+fig = mod.corner_observed()
+fig.savefig('/tigress/np5/figures/test{}_triplet4_corner_observed.png'.format(i))
 plt.close(fig)
