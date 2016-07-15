@@ -69,12 +69,15 @@ age = np.log10(1e9)
 #Simulate true magnitudes
 unresolved_bands = ['J','H','K']
 resolved_bands = ['i','K']
-args1 = (age, feh, distance, AV)
-unresolved = {b:addmags(dar.mag[b](M1, *args), dar.mag[b](M2, *args), dar.mag[b](M3, *args), dar.mag[b](M4, *args)) for b in unresolved_bands}
-resolved_1 = {b:dar.mag[b](M1, *args) for b in resolved_bands}
-resolved_2 = {b:dar.mag[b](M2, *args) for b in resolved_bands}
-resolved_3 = {b:dar.mag[b](M3, *args) for b in resolved_bands}
-resolved_4 = {b:dar.mag[b](M3, *args) for b in resolved_bands}
+args1 = (age, feh, distance1, AV)
+args2 = (age, feh, distance2, AV)
+args3 = (age, feh, distance3, AV)
+args4 = (age, feh, distance4, AV)
+unresolved = {b:addmags(dar.mag[b](M1, *args1), dar.mag[b](M2, *args2), dar.mag[b](M3, *args3), dar.mag[b](M4, *args4)) for b in unresolved_bands}
+resolved_1 = {b:dar.mag[b](M1, *args1) for b in resolved_bands}
+resolved_2 = {b:dar.mag[b](M2, *args2) for b in resolved_bands}
+resolved_3 = {b:dar.mag[b](M3, *args3) for b in resolved_bands}
+resolved_4 = {b:dar.mag[b](M3, *args4) for b in resolved_bands}
 
 #print dar.mag['K'](M2, *args2)
 #print unresolved, resolved_1, resolved_2
