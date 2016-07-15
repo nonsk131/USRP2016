@@ -24,7 +24,7 @@ def get_index(n):
 n = sys.argv[1]
 i = get_index(n)
 
-df = pd.read_csv('/tigress/np5/df_triplet_test{}.csv'.format(i))
+df = pd.read_csv('/tigress/np5/dataFrame/df_triplet_test{}.csv'.format(i))
 
 #-------------------------------------------------------------------------------
 #triplet0 - all in same system
