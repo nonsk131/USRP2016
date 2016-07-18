@@ -12,7 +12,7 @@ for line in file:
     if line == '\n':
         continue
     elif 'test' in line:
-        index = line.split(':')[1][1:]
+        index = line.split(':')[1][1:-1]
         if index > '1000':
             tracker = 'bound'
         elif index > '2000':
