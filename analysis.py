@@ -13,7 +13,7 @@ quad = ['evidence_quad0.txt','evidence_quad1.txt','evidence_quad2.txt',
         'evidence_quad9.txt','evidence_quad10.txt','evidence_quad11.txt',
         'evidence_quad12.txt','evidence_quad13.txt','evidence_quad14.txt']
 
-data = [binary, triplet, quad]
+data = [binary, triplet] #, quad]
 
 def get_columnName(name):
     if 'triple' in name:
