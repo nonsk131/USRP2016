@@ -37,7 +37,7 @@ for line in file:
                                     'distance1':distance1,
                                     'distance2':distance2,
                                     'AV1':0.0,
-                                    'AV2':0.1},index=[index])
+                                    'AV2':0.1},index=[index]))
         elif tracker == 'bound':
             line = line.split('=')[1]
             line = line.split(',')
@@ -54,7 +54,7 @@ for line in file:
                                     'distance1':distance1,
                                     'distance2':distance1,
                                     'AV1':0.0,
-                                    'AV2':0.0},index=[index])
+                                    'AV2':0.0},index=[index]))
         else:
             line = line.split('=')[1]
             line = line.split(',')
@@ -79,7 +79,7 @@ for line in file:
                                     'distance3':distance2,
                                     'AV1':0.0,
                                     'AV2':0.1,
-                                    'AV3':0.1},index=[index])
+                                    'AV3':0.1},index=[index]))
 file.close()
 all_df = pd.concat([df1,df2,df3])
 all_df = all_df.sort_index()
