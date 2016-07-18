@@ -13,7 +13,7 @@ for line in file:
         continue
     elif 'test' in line:
         index = line.split(':')[1][1:-1]
-        if index > '999':
+        if index > '0999':
             tracker = 'bound'
         elif index > '1999':
             tracker = 'triplet3'
