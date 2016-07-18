@@ -61,7 +61,7 @@ mod.fit_multinest(n_live_points=1000,
                     basename='/tigress/np5/chains/test{}_quad1'.format(i))
 
 if rank == 0:
-    f1 = open('/tigress/np5/evidence_triplet1.txt','a')
+    f1 = open('/tigress/np5/evidence_quad1.txt','a')
     evi = mod.evidence
     evi = str(evi)
     f1.write('case{}: '.format(i) + evi + '\n')
