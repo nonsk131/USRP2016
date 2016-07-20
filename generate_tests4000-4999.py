@@ -30,8 +30,8 @@ for n in range(4000,5000,1):
         M1 = array[1]
         M2 = array[0]
 
-    age1 = np.log10(1e8)
-    age2 = np.log10(5e8)
+    age1 = np.log10(6e8)
+    age2 = np.log10(1e9)
     feh1 = 0.0
 
     array = 1400*np.random.rand(2) + 100
