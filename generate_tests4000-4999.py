@@ -27,8 +27,8 @@ for n in range(4000,5000,1):
         M1 = array[1]
         M2 = array[0]
     else:
-        M1 = array[1]
-        M2 = array[0]
+        M1 = array[0]
+        M2 = array[1]
 
     age1 = np.log10(6e8)
     age2 = np.log10(1e9)
