@@ -13,9 +13,11 @@ for line in file:
         continue
     elif 'test' in line:
         index = line.split(':')[1][1:-1]
-        if index > '1999':
+        if index > '3999':
+            tracker = 'bound'
+        elif index > '1999':
             tracker = 'triplet3'
-            break               #for now we only want the data for binary systems
+            #for now we only want the data for binary systems
         elif index > '0999':
             tracker = 'bound'
         index = 'case' + index
@@ -57,30 +59,31 @@ for line in file:
                                     'AV1':0.0,
                                     'AV2':0.0},index=[index]))
         else:
-            line = line.split('=')[1]
-            line = line.split(',')
-            M1 = float(line[0][2:])
-            M2 = float(line[1])
-            M3 = float(line[2])
-            age1 = float(line[3])
-            age2 = float(line[4])
-            distance1 = float(line[7])
-            distance2 = float(line[8])
-            df3 = df3.append(pd.DataFrame({'M1':M1,
-                                    'M2':M2,
-                                    'M3':M3,
-                                    'age1':age1,
-                                    'age2':age2,
-                                    'age3':age2,
-                                    'feh1':0.0,
-                                    'feh2':0.2,
-                                    'feh3':0.2,
-                                    'distance1':distance1,
-                                    'distance2':distance2,
-                                    'distance3':distance2,
-                                    'AV1':0.0,
-                                    'AV2':0.1,
-                                    'AV3':0.1},index=[index]))
+            pass
+            # line = line.split('=')[1]
+            # line = line.split(',')
+            # M1 = float(line[0][2:])
+            # M2 = float(line[1])
+            # M3 = float(line[2])
+            # age1 = float(line[3])
+            # age2 = float(line[4])
+            # distance1 = float(line[7])
+            # distance2 = float(line[8])
+            # df3 = df3.append(pd.DataFrame({'M1':M1,
+            #                         'M2':M2,
+            #                         'M3':M3,
+            #                         'age1':age1,
+            #                         'age2':age2,
+            #                         'age3':age2,
+            #                         'feh1':0.0,
+            #                         'feh2':0.2,
+            #                         'feh3':0.2,
+            #                         'distance1':distance1,
+            #                         'distance2':distance2,
+            #                         'distance3':distance2,
+            #                         'AV1':0.0,
+            #                         'AV2':0.1,
+            #                         'AV3':0.1},index=[index]))
 file.close()
 all_df = pd.concat([df1,df2,df3])
 all_df = all_df.sort_index()
