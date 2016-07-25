@@ -14,7 +14,7 @@ for line in file:
     elif 'test' in line:
         index = line.split(':')[1][1:-1]
         if index > '3999':
-            tracker = 'bound'
+            tracker = 'unbound'
         elif index > '1999':
             tracker = 'triplet3'
             #for now we only want the data for binary systems
