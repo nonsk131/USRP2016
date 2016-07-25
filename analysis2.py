@@ -34,7 +34,7 @@ for line in file:
             distance1 = float(line[6])
             distance2 = float(line[7])
             AV1 = float(line[8])
-            AV2 = float(line[9][:-1])
+            AV2 = float(line[9][:-2])
             df1 = df1.append(pd.DataFrame({'M1':M1,
                                     'M2':M2,
                                     'age1':age1,
@@ -53,7 +53,7 @@ for line in file:
             age1 = float(line[2])
             feh1 = float(line[3])
             distance1 = float(line[4])
-            AV1 = float(line[5][:-1])
+            AV1 = float(line[5][:-2])
             df2 = df2.append(pd.DataFrame({'M1':M1,
                                     'M2':M2,
                                     'age1':age1,
