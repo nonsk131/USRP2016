@@ -6,7 +6,7 @@ import pandas as pd
 file = open('/tigress/np5/true_params.txt','a')
 
 
-for n in range(5000,5500,1):
+for n in range(5000,6000,1):
     index = str(n)
 
     file.write('test: ' + index + '\n')
