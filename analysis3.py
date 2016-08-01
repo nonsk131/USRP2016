@@ -17,3 +17,6 @@ mod.fit_multinest(n_live_points=1000,
                     basename='/tigress/np5/chains/test{}_unassociated'.format(i))
 
 print mod.samples.mass_0_0.median()
+print mod.samples.mass_1_0.median()
+print mod.samples.distance_0_0.median()
+print mod.samples.distance_1_0.median()
