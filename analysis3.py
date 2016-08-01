@@ -14,6 +14,6 @@ t.define_models(dar, index=[0,1])
 
 mod = StarModel(dar, obs=t)
 mod.fit_multinest(n_live_points=1000,
-                    basename='/tigress/np5/chains/test{}_bound'.format(i))
+                    basename='/tigress/np5/chains/test{}_unassociated'.format(i))
 
 print mod.samples.mass_0_0.median()
