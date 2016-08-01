@@ -18,5 +18,5 @@ mod.fit_multinest(n_live_points=1000,
 
 print mod.samples.mass_0_0.median()
 print mod.samples.mass_1_0.median()
-print mod.samples.distance_0_0.median()
-print mod.samples.distance_1_0.median()
+print mod.samples.distance_0.median()
+print mod.samples.distance_1.median()
