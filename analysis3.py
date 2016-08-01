@@ -4,7 +4,7 @@ from isochrones.starmodel import StarModel
 from isochrones.observation import ObservationTree
 import numpy as np
 
-df = pd.DataFrame()
+df_data = pd.DataFrame()
 
 i = 6000
 df = pd.read_csv('/tigress/np5/dataFrame/df_binary_test{}.csv'.format(i))
@@ -24,9 +24,9 @@ distance1 = mod.samples.distance_0.median()
 distance2 = mod.samples.distance_1.median()
 
 index = 'case'+str(i)
-df = df.append(pd.DataFrame({'M1':M1,
+df_data = df.append(pd.DataFrame({'M1':M1,
                 'M2':M2,
                 'distance1':distance1,
                 'distance2':distance2},index=[index]))
 
-print df
+print df_data
