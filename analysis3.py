@@ -10,7 +10,7 @@ df = pd.read_csv('/tigress/np5/dataFrame/df_binary_test{}.csv'.format(i))
 dar = Dartmouth_Isochrone()
 t = ObservationTree.from_df(df, name='test{}'.format(i))
 
-t.define_models(dar)
+t.define_models(dar, index=[0,1])
 
 mod = StarModel(dar, obs=t)
 mod.fit_multinest(n_live_points=1000,
