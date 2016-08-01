@@ -24,9 +24,9 @@ distance1 = mod.samples.distance_0.median()
 distance2 = mod.samples.distance_1.median()
 
 index = 'case'+str(i)
-df = df.append({'M1':M1,
+df = df.append(pd.DataFrame({'M1':M1,
                 'M2':M2,
                 'distance1':distance1,
-                'distance2':distance2},index=[index])
+                'distance2':distance2},index=[index]))
 
 print df
